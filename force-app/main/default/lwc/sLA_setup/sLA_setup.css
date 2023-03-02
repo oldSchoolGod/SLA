@@ -1,0 +1,92 @@
+.my-cystom-input{
+    --sds-c-input-radius-border: 4px;
+    width: 50%;
+    margin-left: 250px;
+    font-weight: 700;
+}
+.container{
+    height: 84vh ;
+    width : 100% ;   
+    
+    border-radius: 4px;
+    background-color: #b3c3d096;
+}
+
+.nav{
+    position: relative;
+    height: 67px;
+    width: 100%;
+    background-color: #747474c9;
+    
+    border-radius: 4px;
+}
+.htmBody{
+    display: flex;
+    height: 373px;
+    width: 756px;
+    justify-content: space-evenly;
+    
+}
+.button-Mangaer-box{
+    position: relative;
+    height: 96px;
+    width: 200px;
+    margin-top: -175px;
+     padding: 5px;
+    box-shadow: 5px 8px 8px 8px #887888;
+    background-color: white;
+    border-radius: 4px;
+}
+.button-Hierarchy-box{
+    position: relative;
+    height: 96px;
+    width: 200px;
+    margin-top: -175px;
+    padding: 5px;
+    box-shadow: 5px 8px 8px 8px #887888;
+    background-color: white;
+    border-radius: 4px;
+}
+.naam{
+    position: relative;
+    margin-top: -200px;
+    margin-left: -242px;
+}
+.FAQ-Body{
+    position: relative; 
+}
+.faq-nav{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: #747474c9;
+    border-radius: 4px;
+     margin-top: 53px;
+}
+.accrodian{
+    position: relative;
+}
+.divBorder{
+    border: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}.color-border{
+   color: black; 
+ 
+
+} 
+.multipicklist{
+    position: relative;
+    width: 141%;
+    margin-left: -31%;
+}
+.postion{
+    margin-left: 42%;
+    position: absolute;
+    margin-top: -2%;
+}
+.size-Width{
+    width: 141%;
+}

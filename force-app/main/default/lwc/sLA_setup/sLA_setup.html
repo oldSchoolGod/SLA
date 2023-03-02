@@ -1,0 +1,158 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 2
+@last modified on  : 11-29-2022
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+<div class="container ">
+
+<div class="nav slds-align_absolute-center">
+<h2 class="slds-text-heading_medium slds-m-bottom_medium" style="color:white ">
+   WELCOME TO SLA CONFIGURATION
+</h2>
+</div>
+
+<div style="margin-left: 94%; margin-top: 6px;">
+   <lightning-button variant="neutral" label="Home" onclick={home} ></lightning-button>
+</div>
+
+
+<div class="htmBody slds-align_absolute-center">
+<div class ="button-Mangaer-box">
+   <div class="slds-align_absolute-center">
+      <lightning-icon icon-name='utility:user' alternative-text='user'  size='meadium' title='user' style="margin-top: 25px;"></lightning-icon>
+   </div>
+   <lightning-button-group class="slds-align_absolute-center" >
+
+<lightning-button  variant="Base" label="MANAGERS" onclick ={buttonForManager} style="position: absolute; top: 61px; left: 69px; "></lightning-button>
+   
+   
+</lightning-button-group>
+
+</div>
+<!-- <div class="button-Hierarchy-box">
+   <div class="slds-align_absolute-center">
+      <lightning-icon icon-name='utility:hierarchy' alternative-text='hierarchy' size='meadium' title='hierarchy' style="margin-top: 25px;"></lightning-icon>
+      </div>
+   <lightning-button-group class="slds-align_absolute-center ">
+      <lightning-button variant="Base" label="HIERARCHY" onclick ={buttonForHierarchy} style="position: absolute; top: 61px; left: 69px; "></lightning-button>
+   </lightning-button-group>
+</div> -->
+</div>
+
+<template if:true={isFieldSet}>
+<div class="naam">
+   <template if:true={isBusinessVisible}>
+      <div class="slds-align_absolute-center" style="margin-left: 240px;">
+         <div class="slds-checkbox ">
+         <input type="checkbox" name="options" id="checkbox-unique-id-90"   onchange={handleBusinessChange} />
+         <label class="slds-checkbox__label" for="checkbox-unique-id-90" style="font-weight: 700;">
+            <span class="slds-checkbox_faux"></span>
+            <span class="slds-form-element__label">Business Hour</span>
+         </label>
+      </div>
+   </div>
+   </template>
+
+
+   <template if:true={iscomboBoxVisible}>
+
+      <div class="slds-align_absolute-center">
+   <lightning-combobox
+      name="progress"
+      label="Status"
+      class="my-cystom-input"
+      value={picklistValue}
+      placeholder="Select Progress"
+      options={caseStatusvalues}
+      onchange={handleChange} ></lightning-combobox>
+   </div>
+      
+   
+   </template>
+
+   <template if:true={isslaIntervalTimesVisible}>
+
+      <div class="slds-align_absolute-center">
+      <div class="slds-form-element my-cystom-input" style="margin-top: 1%;">
+      <label class="slds-form-element__label" for="text-input-id-47" style="font-weight: 700;">
+         <abbr class="slds-required" title="required" >* </abbr>Sla Time Interval</label>
+      <div class="slds-form-element__control">
+         <input type="text" id="text-input-id-47" placeholder="2,4,6,7" required="" class="slds-input" onchange={handleSlaIntervalChange} />
+      </div>
+      </div>
+      
+      </div>
+      </template>
+      
+      <template if:true={isemailTemplatesVisible}>
+         
+         <div class="slds-align_absolute-center postion " style="height: 49vh;">
+         <div class="multipicklist">
+         <lightning-dual-listbox name="languages"
+                        label="EmailTemplate"
+                        options={emailtemps}
+                        onchange={selectedValue}></lightning-dual-listbox>
+                        </div>
+
+                        <template if:true={isSaveVisible}>
+                           <button class="slds-button slds-button_brand slds-align_absolute-center " style=" margin-top: 51%; margin-left: -78%;" onclick={handelSave}>Save</button>
+                        </template>
+</div>
+</div>
+      </template>
+      <div class="slds-align_absolute-center">
+<template if:true={isSaveVisibleforhierarchy}>
+                           <button class="slds-button slds-button_brand slds-align_absolute-center " onclick={handelSave}>Save</button>
+                        </template>
+                        </div>
+   </div>
+
+</template>
+
+<template if:true={isFaq}>
+<div class="FAQ-Body">
+
+      <div class="faq-nav">
+<h2 class="slds-text-heading_medium slds-m-bottom_medium" style="color:white ">
+   FAQ->
+</h2>
+</div>
+
+<div class="accrodian">
+<lightning-accordion allow-multiple-sections-open
+                     onsectiontoggle={handleSectionToggle}
+                     active-section-name={activeSections}>
+                     <div class="divBorder">
+   <lightning-accordion-section name="A" label="About Sla-Timer Application">
+      <p class="font-size">SLA stands for Service Level Agreement.</p>
+      <p>A service-level agreement (SLA) is a commitment between you and your customer. With Service Cloud, you can manage your service-level agreements with service contracts, entitlements, milestones, and assets.</p>
+   </lightning-accordion-section>
+   
+</div>
+<div class="divBorder">
+   <lightning-accordion-section name="B" label="How to Quickly Setup">
+      <p>This is the content area for section B.</p>
+      <p>Nam at elit et justo scelerisque ullamcorper vel a felis. Mauris sit amet lorem sed est sagittis blandit nec ac turpis. Ut a mi id turpis pharetra ornare. Nullam rhoncus feugiat nunc, ac pulvinar felis pulvinar at. Nullam efficitur aliquet justo et ultricies. Maecenas eu felis aliquam, tincidunt elit at, suscipit leo. Duis ut urna nec nibh hendrerit lacinia. Sed non auctor libero. Sed pellentesque tempor mollis.</p>
+   </lightning-accordion-section>
+</div>
+<div class="divBorder">
+   <lightning-accordion-section name="C" label="Manager">
+      <p>This is the content area for section C.</p>
+      <p>Nulla ornare ipsum felis, vel aliquet dui blandit vel. Integer accumsan velit quis mauris pharetra, nec sollicitudin dui eleifend. Cras condimentum odio mi, nec ullamcorper arcu ullamcorper sed. Proin massa arcu, rutrum a ullamcorper nec, hendrerit in sem. Etiam tempus eros ut lorem tincidunt, id condimentum nulla molestie. Morbi hendrerit elit pretium, ultrices neque non, ullamcorper justo. Quisque vel nisi eget eros efficitur semper. Nulla pulvinar venenatis quam vitae efficitur. Nam facilisis sollicitudin quam ac imperdiet.</p>
+   </lightning-accordion-section>
+</div>
+</lightning-accordion>
+</div>
+   
+   
+</div>
+
+</template>
+
+
+</div>
+
+</template>
